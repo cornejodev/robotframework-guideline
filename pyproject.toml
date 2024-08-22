@@ -1,0 +1,68 @@
+[tool.poetry]
+name = "amazon-test-suite-robot"
+version = "0.1.0"
+description = ""
+authors = ["Edwin Cornejo, <koed.dev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+robotframework = "^7.0"
+robotframework-seleniumlibrary = "^6.2.0"
+robotframework-sikulilibrary = "^2.0.3"
+robotframework-pabot = "^2.18.0"
+robotframework-mainframe3270 = "^4.1"
+numpy = "^1.26.4"
+pandas = "^2.2.0"
+openpyxl = "^3.1.2"
+selenium = "^4.17.2"
+opencv-python = "^4.9.0.80"
+appium-python-client = "^3.1.1"
+kitchen = "^1.2.6"
+xlrd = "^2.0.1"
+decorator = "^5.1.1"
+async-generator = "^1.10"
+docutils = "^0.20.1"
+requests = "^2.31.0"
+robotframework-tidy = "^4.9.0"
+
+[tool.robotidy]
+line_length = 50
+indent = 4
+transform = [
+    "AddMissingEnd",
+    "NormalizeSeparators",
+    "DiscardEmptySections",
+    "MergeAndOrderSections",
+    "RemoveEmptySettings",
+    "NormalizeAssignments",
+    "OrderSettings",
+    "OrderSettingsSection",
+    "NormalizeTags",
+    "AlignSettingsSection",
+    "AlignVariablesSection",
+    "NormalizeNewLines",
+    "NormalizeSectionHeaderName",
+    "NormalizeSettingName",
+    "ReplaceRunKeywordIf",
+    "SplitTooLongLine",
+    "ReplaceBreakContinue",
+    "InlineIf",
+    "AlignTestCasesSection",
+    "AlignKeywordsSection",
+    "RenameKeywords",
+    "RenameTestCases",
+    "RenameVariables",
+]
+configure = [
+    "NormalizeAssignments:equal_sign_type=equal_sign:skip_sections=variable",
+    "OrderSettingsSection:imports_order=library,resource,variables:settings_order=suite_setup,suite_teardown,test_setup,test_teardown,test_timeout,test_template:new_lines_between_groups=2",
+    "SplitTooLongLine:split_on_every_arg=True:split_on_every_setting_arg=True",
+    "AlignTestCasesSection:alignment_type=fixed:handle_too_long=overflow",
+    "AlignKeywordsSection:alignment_type=fixed:handle_too_long=overflow",
+    "RenameTestCases:capitalize_each_word=True",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

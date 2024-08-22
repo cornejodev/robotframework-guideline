@@ -1,0 +1,3 @@
+-v GLOBAL_VAR_HEADLESS_MODE:TRUE
+-v GLOBAL_VAR_BROWSER:headlessfirefox
+-d reports
